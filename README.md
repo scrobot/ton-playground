@@ -1,26 +1,54 @@
-# intro
+# TON Wallet Interaction Project
 
-## Project structure
+This project showcases basic operations with a TON (Telegram Open Network) wallet using various libraries. It demonstrates how to create a TON client, check if a wallet is deployed, obtain its balance, and send a transfer to another wallet.
 
--   `contracts` - source code of all the smart contracts of the project and their dependencies.
--   `wrappers` - wrapper classes (implementing `Contract` from ton-core) for the contracts, including any [de]serialization primitives and compilation functions.
--   `tests` - tests for the contracts.
--   `scripts` - scripts used by the project, mainly the deployment scripts.
+## Getting Started
 
-## How to use
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Build
+### Prerequisites
 
-`npx blueprint build` or `yarn blueprint build`
+Ensure you have `node` and `npm` installed. If not, download and install them from [here](https://nodejs.org/).
 
-### Test
+### Installation
 
-`npx blueprint test` or `yarn blueprint test`
+1. Clone the repository:
+    ```
+    git clone [YOUR_REPOSITORY_URL]
+    ```
+2. Navigate to the project directory:
+    ```
+    cd [YOUR_PROJECT_DIRECTORY]
+    ```
+3. Install the required packages:
+    ```
+    npm install
+    ```
+## Usage
+To run the project, simply execute:
+```
+npm run main
+``` 
+This will:
+1. Convert the mnemonic to a wallet key.
+2. Create a TON wallet.
+3. Establish a connection to the TON testnet.
+4. Check if the wallet is deployed.
+5. If the wallet is deployed, it will fetch and display the balance.
+6. Send a transfer to a specified TON address.
+7. Monitor and wait until the transaction is confirmed.
 
-### Deploy or run another script
+## Features
+- **mnemonicToWalletKey**: Converts a mnemonic phrase to a TON wallet key.
+- **TonClient**: Helps in interacting with the TON network.
+- **WalletContractV4**: Represents a TON wallet contract.
+- **sendTransfer**: Sends a transfer from one wallet to another.
 
-`npx blueprint run` or `yarn blueprint run`
+## Libraries & Dependencies
+- **ton-crypto**: Provides cryptographic utilities for TON.
+- **ton**: Main library to interact with TON.
+- **@orbs-network/ton-access**: Assists in accessing TON network endpoints.
 
-### Add a new contract
-
-`npx blueprint create ContractName` or `yarn blueprint create ContractName`
+## Security Note
+Please note that the provided mnemonic in this code is for demonstration purposes. It's crucial to keep your mnemonics secure and never expose them in production code or publicly.
+ 

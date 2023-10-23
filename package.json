@@ -2,6 +2,7 @@
     "name": "intro",
     "version": "0.0.1",
     "scripts": {
+        "main": "npx ts-node main.ts",
         "start": "blueprint run",
         "build": "blueprint build",
         "test": "jest"
